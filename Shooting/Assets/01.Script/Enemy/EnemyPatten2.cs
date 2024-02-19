@@ -42,6 +42,7 @@ public class Enemypatten2 : Enemy
 
                     var projectile = Instantiate(Projectile,transform.position,Quaternion.identity);
                     projectile.GetComponent<Projectile>().SetDirection(direction);
+                    SoundManager.instance.PlaySFX("Shoot");
                     projectile.GetComponent<Projectile>().MoveSpeed = ProjectileMoveSpeed;
 
 

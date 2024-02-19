@@ -36,14 +36,15 @@ public class PlayerHPSystem : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy")
             && !GameManager.Instance.Player.Invincibility
             && !GameManager.Instance.bStageCleared)
-        { 
+        {
+            SoundManager.instance.PlaySFX("Hit");
             Health -= 1;
             GameInstance.instance.CurrentPlayerHP = Health;
 
             if(Health <= 0)
             {
                 GameManager.Instance.Player.DeadProcess();
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
             }
 
             

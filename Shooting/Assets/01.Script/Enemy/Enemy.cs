@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -43,6 +44,7 @@ public class Enemy : MonoBehaviour
     {
         if (!bIsDead)
         {
+            SoundManager.instance.PlaySFX("Explosion");
             GameManager.Instance.EnemyDies();
 
             if (!bMustSpawnItem)
@@ -64,6 +66,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
             Health -= 1;
+            SoundManager.instance.PlaySFX("Hit");
             if (Health < 0)
             {
                 if (Health <= 0f)

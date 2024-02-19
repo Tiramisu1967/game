@@ -12,7 +12,7 @@ public class FreezeSkill : BaseSkill
         {
             if (obj != null)
             {
-                if (obj.GetComponent<BossA>())
+                if (obj.GetComponent<BossA>()|| obj.GetComponent<BossB>())
                     return;
                 Debug.Log("!!!");
                 Enemy enemy = obj.GetComponent<Enemy>();

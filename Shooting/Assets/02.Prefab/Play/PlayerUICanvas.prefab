@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 542325372996007230}
   - component: {fileID: 5652550147265148033}
   m_Layer: 5
-  m_Name: RecoverySkill
+  m_Name: ProtactSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

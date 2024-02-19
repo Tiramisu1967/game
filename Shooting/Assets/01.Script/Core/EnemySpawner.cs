@@ -9,6 +9,8 @@ public class EnemySpawner : BaseManager
     public GameObject[] Enemy;
     public GameObject Meteor;
     public GameObject BossA;
+    public GameObject BossB
+        ;
     public Transform[] EnemySpawnTransform;
     public float CoolDownTime;
     private int[] bin;
@@ -54,7 +56,12 @@ public class EnemySpawner : BaseManager
         }
         if (_bSpawnBoss)
         {
-            Instantiate(BossA, EnemySpawnTransform[Random.Range(0, EnemySpawnTransform.Length)].position, Quaternion.identity);
+            if (GameInstance.instance.CurrentStageLevel == 1)
+            {
+                Instantiate(BossA, EnemySpawnTransform[Random.Range(0, EnemySpawnTransform.Length)].position, Quaternion.identity);
+            }
+            else
+            Instantiate(BossB, EnemySpawnTransform[Random.Range(0, EnemySpawnTransform.Length)].position, Quaternion.identity);
         }
 
     }

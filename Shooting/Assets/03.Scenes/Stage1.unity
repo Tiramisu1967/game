@@ -251,6 +251,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &94795104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6830373725448986169, guid: 77a1a0e3a0e002a44b56e5d6019287a0, type: 3}
+  m_PrefabInstance: {fileID: 2994688536218690536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &106800287 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2693871212645267770, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
@@ -1060,7 +1071,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3380612855260818050, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
   m_PrefabInstance: {fileID: 3816712063629869521}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3816712063629869522}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8697e149b3e68f4ca952ee28fb2caf9, type: 3}
@@ -1178,6 +1189,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1611586932 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3200472650697936405, guid: 77a1a0e3a0e002a44b56e5d6019287a0, type: 3}
+  m_PrefabInstance: {fileID: 2994688536218690536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1684811109
@@ -1731,6 +1753,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7139228759933070554, guid: a98c5bdea78d79244adad11e1dfdbced, type: 3}
     - target: {fileID: 3380612855260818050, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
+      propertyPath: MaxWeaponLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380612855260818050, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
       propertyPath: AddOnPos.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1744,12 +1770,16 @@ PrefabInstance:
       objectReference: {fileID: 871455009}
     - target: {fileID: 3380612855260818050, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
       propertyPath: _skillPrefabs.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3380612855260818050, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
       propertyPath: _skillPrefabs.Array.data[3]
       value: 
       objectReference: {fileID: 1073026059898957779, guid: e300981f6a373f444a02d38ad06ab337, type: 3}
+    - target: {fileID: 3380612855260818050, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
+      propertyPath: _skillPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 1337251536075992367, guid: a9c89125ec37a3245bf2f231263f9a7e, type: 3}
     - target: {fileID: 4422870280815870209, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
       propertyPath: m_Name
       value: PlayerCharater
@@ -1797,8 +1827,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4422870280815870209, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3816712063629869523}
   m_SourcePrefab: {fileID: 100100000, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
+--- !u!1 &3816712063629869522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4422870280815870209, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
+  m_PrefabInstance: {fileID: 3816712063629869521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3816712063629869523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3816712063629869522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337763e46505cf54e95a57428618c542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthImages:
+  - {fileID: 242988391}
+  - {fileID: 642694432}
+  - {fileID: 1792352853}
+  RepairSkill: {fileID: 2115635491}
+  BombSkill: {fileID: 926632939}
+  freezeSkill: {fileID: 961469764}
+  RecoverySkill: {fileID: 427045366}
+  FuelSlider: {fileID: 1462028281}
+  SkillCooldownNoticeText: {fileID: 360988198}
+  SkillCooldownTexts:
+  - skill: 1
+    Text: {fileID: 259030089}
+  - skill: 2
+    Text: {fileID: 1936995680}
+  - skill: 3
+    Text: {fileID: 1611586932}
+  - skill: 4
+    Text: {fileID: 94795104}
 --- !u!1001 &5263023721414747012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2127,6 +2196,10 @@ PrefabInstance:
       propertyPath: SkillCooldownTexts.Array.data[1].Text
       value: 
       objectReference: {fileID: 1936995680}
+    - target: {fileID: 6179622456063547210, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
+      propertyPath: BossB
+      value: 
+      objectReference: {fileID: 5447804088305769179, guid: 95023a0588c9702408f70754ca430cc8, type: 3}
     - target: {fileID: 6410725342263283182, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
       propertyPath: Item.Array.size
       value: 4
@@ -2155,7 +2228,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManagers
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6128658488933738792, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

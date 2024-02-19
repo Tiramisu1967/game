@@ -63,7 +63,7 @@ public class PlayerUI : MonoBehaviour
         foreach(var item in SkillCooldownTexts)
         {
             bool bIsCoolDown = GameManager.Instance.Player.Skills[item.skill].bIsCoolDown;
-            float CooldownTime = GameManager.Instance.Player.Skills[item.skill].CooldownTime;
+            float CooldownTime = GameManager.Instance.Player.Skills[item.skill].CurrentTime;
             
             item.Text.gameObject.SetActive(bIsCoolDown);
             item.Text.text = $"{MathF.Round(CooldownTime)}";

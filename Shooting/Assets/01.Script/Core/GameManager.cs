@@ -142,5 +142,6 @@ public class GameManager : MonoBehaviour
         GameInstance.instance.CurrentStageLevel = 1;
         GameInstance.instance.GameStartTime = 0;
         GameInstance.instance.Score = 0;
+        GameInstance.instance = null;
     }
 }

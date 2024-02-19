@@ -37,6 +37,7 @@ public class PrimarySkill : BaseSkill
         
         if(projectile != null)
         {
+            SoundManager.instance.PlaySFX("Shoot");
             projectile.MoveSpeed = ProjectileMoveSpeed;
             projectile.SetDirection(direction.normalized);
         }

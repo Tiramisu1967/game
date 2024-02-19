@@ -34,4 +34,9 @@ public class Projectile : MonoBehaviour
         _direction = direction;
     }
 
+    private void OnDestroy()
+    {
+        SoundManager.instance.PlaySFX("Explosion");
+    }
+
 }

@@ -45,7 +45,7 @@ public class BossA : MonoBehaviour
     private void NextPattern()
     {
       
-        _currentPatternIndex = Random.Range(0, 2);
+        _currentPatternIndex = Random.Range(0, 3);
         Debug.Log(_currentPatternIndex);
     
         switch (_currentPatternIndex)
@@ -58,6 +58,9 @@ public class BossA : MonoBehaviour
                 break;
             case 2:
                 Pattern3();
+                break;
+            case 3:
+                Pattern4();
                 break;
         }
     }
@@ -101,7 +104,7 @@ public class BossA : MonoBehaviour
     {
         GameObject instance = Instantiate(Projectile, position, Quaternion.identity);
         Projectile projectile = instance.GetComponent<Projectile>();
-
+        SoundManager.instance.PlaySFX("Shoot");
         if (projectile != null)
         {
             projectile.MoveSpeed = ProjectileMoveSpeed;
@@ -147,9 +150,17 @@ public class BossA : MonoBehaviour
         NextPattern();
     }
 
+    public virtual void Pattern4()
+    {
+
+    }
+
     private void OnDestroy()
     {
-        GameManager.Instance.StageClear();
+       
+            GameManager.Instance.StageClear();
+        
+        
     }
 
 }

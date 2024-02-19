@@ -62,9 +62,12 @@ public class PlayerCharater : MonoBehaviour
 
     public void DeadProcess()
     {
+
+        GameManager.InitInstance();
         SoundManager.instance.PlaySFX("Explosion");
         SoundManager.instance.PlaySFX("PlayerDie");
         StartCoroutine(DelaySeconds());
+      
     }
 
     IEnumerator DelaySeconds()
@@ -108,8 +111,8 @@ public class PlayerCharater : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Z)) ActivateSkill(EnumTypes.PlayerSkill.Primary);
         if (Input.GetKeyUp(KeyCode.X)) ActivateSkill(EnumTypes.PlayerSkill.Repair);
-        //if (Input.GetKeyUp(KeyCode.C)) ActivateSkill(EnumTypes.PlayerSkill.Protact);
-        //if (Input.GetKeyUp(KeyCode.V)) ActivateSkill(EnumTypes.PlayerSkill.Iceage);
+        if (Input.GetKeyUp(KeyCode.C)) ActivateSkill(EnumTypes.PlayerSkill.Protact);
+        if (Input.GetKeyUp(KeyCode.V)) ActivateSkill(EnumTypes.PlayerSkill.freeze);
         if (Input.GetKeyUp(KeyCode.B)) ActivateSkill(EnumTypes.PlayerSkill.Bomb);
     }
 
@@ -181,6 +184,7 @@ public class PlayerCharater : MonoBehaviour
         BaseItem item = collision.GetComponent<BaseItem>();
         if (item != null)
         {
+            SoundManager.instance.PlaySFX("ItemGet");
             item.OnGetItem(this);
             Destroy(collision.gameObject);
         }
