@@ -10,6 +10,8 @@ public class BombSkill : BaseSkill
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject obj in enemies)
         {
+            if (obj.GetComponent<BossA>() || obj.GetComponent<BossB>())
+                return;
             Enemy enemy = obj?.GetComponent<Enemy>();
             if (enemy?.bIsDestroy == false) enemy?.Dead();
         }

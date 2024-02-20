@@ -13,8 +13,7 @@ public class Projectile : MonoBehaviour
     
     public GameObject ExplodeFX;
     
-    [SerializeField]
-    private float _lifeTime = 3f;
+    public float _lifeTime = 3f;
 
     
     // Start is called before the first frame update

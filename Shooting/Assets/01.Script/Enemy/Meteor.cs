@@ -4,31 +4,20 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
-
-    [HideInInspector]
-    public float MoveSpeed = 2f;
-
-    private Vector3 _direction;
+    [SerializeField]
+    private float MoveSpeed = 15f;
 
     public GameObject ExplodeFX;
 
-
-    // Start is called before the first frame update
+    [SerializeField]
+    private float _lifeTime = 3f;
     void Start()
     {
+        Destroy(gameObject, _lifeTime);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(_direction * MoveSpeed * Time.deltaTime);
+        transform.Translate(new Vector3(0, -MoveSpeed * Time.deltaTime, 0f));
     }
-
-    public void SetDirection(Vector3 direction)
-    {
-        _direction = direction;
-    }
-
-
-
 }

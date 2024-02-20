@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float Health = 3f;
+    public float MaxHealth = 3f;
     public float AttackDamage = 1f;
     bool bIsDead = false;
     public bool bIsFreeze = false;
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        MaxHealth = Health;
         freezetime = 3;
         tmpSpeed = MoveSpeed;
     }

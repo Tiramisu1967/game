@@ -6,7 +6,8 @@ using UnityEngine.UIElements;
 
 public class EnemySpawner : BaseManager
 {
-    public GameObject[] Enemy;
+    public GameObject[] Stage1Enemy;
+    public GameObject[] Stage2Enemy;
     public GameObject Meteor;
     public GameObject BossA;
     public GameObject BossB
@@ -22,12 +23,28 @@ public class EnemySpawner : BaseManager
     public override void Init(GameManager gameManger)
     {
         base.Init(gameManger);
-        StartCoroutine(SpawnEnemy());
+        
+        switch (GameInstance.instance.CurrentStageLevel)
+        {
+            case 1:
+                StartCoroutine(SpawnStage1Enemy());
+                Debug.Log("!!!1");
+                break;
+
+            case 2:
+                StartCoroutine(SpawnStage2Enemy());
+                Debug.Log("!!!2");
+                break;
+        }
+            
+        
+        
+        StartCoroutine(MeteorSpawn());
     }
 
 
 
-    IEnumerator SpawnEnemy()
+    IEnumerator SpawnStage1Enemy()
     {
         while (!_bSpawnBoss)
         {
@@ -41,12 +58,12 @@ public class EnemySpawner : BaseManager
 
             for(int i = 0; i < MaxSpawn; i++)
             {
-                int randomEnemy = Random.Range(0, Enemy.Length);
+                int randomEnemy = Random.Range(0, Stage1Enemy.Length);
                 int index = Random.Range(0, position.Count - 1);
                 int randomPosition = position[index];
                 
                 position.RemoveAt(index);
-                Instantiate(Enemy[randomEnemy], EnemySpawnTransform[randomPosition].position, Quaternion.identity);
+                Instantiate(Stage1Enemy[randomEnemy], EnemySpawnTransform[randomPosition].position, Quaternion.identity);
             }
             _spawnCount++;
             if(_spawnCount == BossSpawnCount)
@@ -56,12 +73,41 @@ public class EnemySpawner : BaseManager
         }
         if (_bSpawnBoss)
         {
-            if (GameInstance.instance.CurrentStageLevel == 1)
+            Instantiate(BossA, EnemySpawnTransform[Random.Range(0, EnemySpawnTransform.Length)].position, Quaternion.identity);
+        }
+
+    }
+    IEnumerator SpawnStage2Enemy()
+    {
+        while (!_bSpawnBoss)
+        {
+            yield return new WaitForSeconds(CoolDownTime);
+            List<int> position = new List<int>(EnemySpawnTransform.Length);
+
+            for (int i = 0; i < EnemySpawnTransform.Length; i++)
             {
-                Instantiate(BossA, EnemySpawnTransform[Random.Range(0, EnemySpawnTransform.Length)].position, Quaternion.identity);
+                position.Add(i);
             }
-            else
-            Instantiate(BossB, EnemySpawnTransform[Random.Range(0, EnemySpawnTransform.Length)].position, Quaternion.identity);
+
+            for (int i = 0; i < MaxSpawn; i++)
+            {
+                int randomEnemy = Random.Range(0, Stage2Enemy.Length);
+                int index = Random.Range(0, position.Count - 1);
+                int randomPosition = position[index];
+
+                position.RemoveAt(index);
+                Instantiate(Stage2Enemy[randomEnemy], EnemySpawnTransform[randomPosition].position, Quaternion.identity);
+            }
+            _spawnCount++;
+            if (_spawnCount == BossSpawnCount)
+            {
+                _bSpawnBoss = true;
+            }
+        }
+        if (_bSpawnBoss)
+        {
+            
+                Instantiate(BossB, EnemySpawnTransform[Random.Range(0, EnemySpawnTransform.Length)].position, Quaternion.identity);
         }
 
     }
@@ -70,7 +116,7 @@ public class EnemySpawner : BaseManager
     {
         while (true)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(5);
 
             int spawnCount = Random.Range(1, EnemySpawnTransform.Length - 1);
             List<int> availablePositions = new List<int>(EnemySpawnTransform.Length);

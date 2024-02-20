@@ -1773,6 +1773,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7721596954101131902, guid: f0123ddf558c0b64cb52af77f511642e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2149,6 +2153,46 @@ PrefabInstance:
       propertyPath: BossB
       value: 
       objectReference: {fileID: 5447804088305769179, guid: 95023a0588c9702408f70754ca430cc8, type: 3}
+    - target: {fileID: 6179622456063547210, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
+      propertyPath: Stage1Enemy.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179622456063547210, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
+      propertyPath: Stage2Enemy.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179622456063547210, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
+      propertyPath: Stage1Enemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 9159169465773604407, guid: 52702a64c76589844a42cd573bddd6a6, type: 3}
+    - target: {fileID: 6179622456063547210, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
+      propertyPath: Stage1Enemy.Array.data[1]
+      value: 
+      objectReference: {fileID: 5925480453013472740, guid: 61ae1c4283413d248a634e1595a467fe, type: 3}
+    - target: {fileID: 6179622456063547210, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
+      propertyPath: Stage1Enemy.Array.data[2]
+      value: 
+      objectReference: {fileID: 9159169465773604407, guid: 52702a64c76589844a42cd573bddd6a6, type: 3}
+    - target: {fileID: 6179622456063547210, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
+      propertyPath: Stage1Enemy.Array.data[3]
+      value: 
+      objectReference: {fileID: 5925480453013472740, guid: 61ae1c4283413d248a634e1595a467fe, type: 3}
+    - target: {fileID: 6179622456063547210, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
+      propertyPath: Stage2Enemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 9159169465773604407, guid: 52702a64c76589844a42cd573bddd6a6, type: 3}
+    - target: {fileID: 6179622456063547210, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
+      propertyPath: Stage2Enemy.Array.data[1]
+      value: 
+      objectReference: {fileID: 5925480453013472740, guid: 61ae1c4283413d248a634e1595a467fe, type: 3}
+    - target: {fileID: 6179622456063547210, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
+      propertyPath: Stage2Enemy.Array.data[2]
+      value: 
+      objectReference: {fileID: 7777663009462724432, guid: 8a10b30828a1eff42bd9e47edb1afec5, type: 3}
+    - target: {fileID: 6179622456063547210, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
+      propertyPath: Stage2Enemy.Array.data[3]
+      value: 
+      objectReference: {fileID: 1105000890013380183, guid: 8bbfd863dea86764ba334aada3fc6958, type: 3}
     - target: {fileID: 6410725342263283182, guid: 32c00530f4b249042abef44a99c5a2c8, type: 3}
       propertyPath: Item.Array.size
       value: 4

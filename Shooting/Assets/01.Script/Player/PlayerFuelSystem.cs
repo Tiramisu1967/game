@@ -26,6 +26,7 @@ public class PlayerFuelSystem : MonoBehaviour
         if (Fuel <= 0)
         {
             Destroy(this.gameObject);
+            GameManager.Instance.Player.DeadProcess();
         }
         GameInstance.instance.CurrentPlayerFuel = Fuel;
     }

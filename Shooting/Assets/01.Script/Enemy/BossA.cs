@@ -5,11 +5,11 @@ using UnityEngine.UIElements;
 public class BossA : MonoBehaviour
 {
     public GameObject Projectile;
-    public GameObject vim;
     public float ProjectileMoveSpeed = 5.0f;
     public float FireRate = 2.0f;
     public float MoveSpeed = 2.0f;
     public float MoveDistance = 5.0f;
+    public Slider HpSlider;
 
     private int _currentPatternIndex = 0;
     private bool _movingRight = true;
@@ -45,7 +45,7 @@ public class BossA : MonoBehaviour
     private void NextPattern()
     {
       
-        _currentPatternIndex = Random.Range(0, 3);
+        _currentPatternIndex = Random.Range(4, 4);
         Debug.Log(_currentPatternIndex);
     
         switch (_currentPatternIndex)
@@ -61,6 +61,9 @@ public class BossA : MonoBehaviour
                 break;
             case 3:
                 Pattern4();
+                break;
+            case 4:
+                Pattern5();
                 break;
         }
     }
@@ -152,15 +155,28 @@ public class BossA : MonoBehaviour
 
     public virtual void Pattern4()
     {
+        NextPattern();
+    }
 
+    public virtual void Pattern5()
+    {
+        NextPattern();
     }
 
     private void OnDestroy()
     {
-       
+      
+        if (this.gameObject.name == "BossA" || this.gameObject.name == "BossB")
+        {
+            GameManager.Instance.Player.sealtime();
             GameManager.Instance.StageClear();
-        
-        
+        }
+            
+    }
+    public void UpdateHealth()
+    {
+        Enemy enemy = this.GetComponent<Enemy>();
+        HpSlider.value = enemy.Health / enemy.MaxHealth;
     }
 
 }

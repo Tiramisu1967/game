@@ -32,6 +32,12 @@ public class PlayerCharater : MonoBehaviour
     #endregion
 
 
+    public bool Chainbomb = false;
+    public bool Chainfreeze = false;
+    public bool Chainprotact = false;
+    public bool Chainrepair = false;
+
+
     public float distance;
     public Transform[] AddOnPos;
     private AddOnItem addOnItem;
@@ -43,10 +49,10 @@ public class PlayerCharater : MonoBehaviour
     public void InitAddOn()
     {
         // 게임 인스턴스 의 CurrentADdOnCount 만큼 AddOn 다시 생성
-        /*for (int i = 0; i < GameInstance.instance.CurrentPlayerAddOnCount; i++)
+        for (int i = 0; i < GameInstance.instance.CurrentPlayerAddOnCount; i++)
         {
-            AddOnItem.SpawnAddOn(AddOnPos[i], Addon);
-        }*/
+            AddOnItem.SpawnAddOn(Addon, AddOnPos[i]);
+        }
 
     }
 
@@ -82,7 +88,7 @@ public class PlayerCharater : MonoBehaviour
 
     private void Update()
     {
-        //InitAddOn();
+        
         UpdateMovement();
         UpdateSkillInput();
     }
@@ -110,10 +116,10 @@ public class PlayerCharater : MonoBehaviour
     private void UpdateSkillInput()
     {
         if (Input.GetKey(KeyCode.Z)) ActivateSkill(EnumTypes.PlayerSkill.Primary);
-        if (Input.GetKeyUp(KeyCode.X)) ActivateSkill(EnumTypes.PlayerSkill.Repair);
-        if (Input.GetKeyUp(KeyCode.C)) ActivateSkill(EnumTypes.PlayerSkill.Protact);
-        if (Input.GetKeyUp(KeyCode.V)) ActivateSkill(EnumTypes.PlayerSkill.freeze);
-        if (Input.GetKeyUp(KeyCode.B)) ActivateSkill(EnumTypes.PlayerSkill.Bomb);
+        if (Input.GetKeyUp(KeyCode.X) && !Chainrepair) ActivateSkill(EnumTypes.PlayerSkill.Repair);
+        if (Input.GetKeyUp(KeyCode.C) && !Chainprotact) ActivateSkill(EnumTypes.PlayerSkill.Protact);
+        if (Input.GetKeyUp(KeyCode.V) && !Chainfreeze) ActivateSkill(EnumTypes.PlayerSkill.freeze);
+        if (Input.GetKeyUp(KeyCode.Space) && !Chainbomb) ActivateSkill(EnumTypes.PlayerSkill.Bomb);
     }
 
     private void InitializeSkills()
@@ -189,4 +195,13 @@ public class PlayerCharater : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    public void sealtime()
+    {
+        Chainbomb = false;
+        Chainfreeze = false;
+        Chainprotact = false;
+        Chainrepair = false;
+    }
+
 }

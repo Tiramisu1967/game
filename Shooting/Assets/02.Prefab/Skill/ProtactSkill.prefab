@@ -47,7 +47,7 @@ MonoBehaviour:
   CooldownTime: 3
   CurrentTime: 0
   bIsCoolDown: 0
-  bulletPrefab: {fileID: 3159739275939822945, guid: ff4cf88e0cd7099449b70db5c8e7a8c4, type: 3}
+  bulletPrefab: {fileID: 342052665132624076, guid: 817efa8f22f22b44bab86e8203736ddd, type: 3}
   rotationSpeed: 30
   bulletSpawnRadius: 3
   skillDuration: 5

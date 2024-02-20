@@ -31,7 +31,6 @@ public class SoundManager : BaseManager
         if (instance == null)  // 단 하나만 존재하게끔
         {
             instance = this;  // 객체 생성시 instance에 자기 자신을 넣어줌
-            DontDestroyOnLoad(gameObject);  // 씬 바뀔 때 자기 자신 파괴 방지
         }
         else
             Destroy(this.gameObject);

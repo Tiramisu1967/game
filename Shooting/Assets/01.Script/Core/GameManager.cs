@@ -83,6 +83,11 @@ public class GameManager : MonoBehaviour
 
             case 2:
                 SceneManager.LoadScene("Result");
+                InitInstance();
+                break;
+
+            default:
+                Debug.Log("µğÆúÆ®");
                 break;
         }
     }

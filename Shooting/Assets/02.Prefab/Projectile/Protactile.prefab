@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1117524533768103862
+--- !u!1001 &3689483483842083983
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,43 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4002744285578875971, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
       propertyPath: m_Name
-      value: EnemyBullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 4002744285578875971, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095687219893311700, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
-      propertyPath: m_Size.x
-      value: 0.19831732
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095687219893311700, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
-      propertyPath: m_Size.y
-      value: 0.5274128
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095687219893311700, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0015597194
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095687219893311700, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.002339542
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095687219893311700, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8313010823534443254, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7803065417098437583, guid: 5547e92425a5b584ba72bba3566474f0, type: 3}
-    - target: {fileID: 8313010823534443254, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8313010823534443254, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1500970403
+      value: Protactile
       objectReference: {fileID: 0}
     - target: {fileID: 8566730382947064873, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -88,32 +52,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4002744285578875971, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -1800774132336967694}
+      addedObject: {fileID: 4600090579537811627}
   m_SourcePrefab: {fileID: 100100000, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
---- !u!1 &4039346356428436469 stripped
+--- !u!1 &342052665132624076 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4002744285578875971, guid: b272a7935434a7f4d9745bf056e5200f, type: 3}
-  m_PrefabInstance: {fileID: 1117524533768103862}
+  m_PrefabInstance: {fileID: 3689483483842083983}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-1800774132336967694
+--- !u!114 &4600090579537811627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4039346356428436469}
+  m_GameObject: {fileID: 342052665132624076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a691f2c3ce42a74e926aef24b47b363, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cd0f2572031a844d83ff624ffdf71a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
-  ExplodeFX: {fileID: 5017900480036976570, guid: f6c47d0405b83bf48bdab8a8e52c6426, type: 3}
-  _lifeTime: 10

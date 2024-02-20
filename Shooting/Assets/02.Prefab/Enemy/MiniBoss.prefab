@@ -14,11 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8460195838679558202, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7016618
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8460195838679558202, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6346677
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460195838679558202, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8460195838679558202, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
       propertyPath: m_LocalPosition.x
@@ -100,7 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a55bb4abd0d5e4bb5b9cec7daea0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  Health: 5
+  MaxHealth: 3
   AttackDamage: 1
   bIsFreeze: 0
   bIsDestroy: 0
@@ -121,9 +126,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 4039346356428436469, guid: ef1953c4d759f3143af8866eec515183, type: 3}
-  vim: {fileID: 0}
   ProjectileMoveSpeed: 5
   FireRate: 2
   MoveSpeed: 2
   MoveDistance: 5
   mini: {fileID: 8910228992685385373}
+  chainseal: {fileID: 5814494814981822690, guid: 588c535b55641aa46b7c9d6b4adbe0ca, type: 3}
+  ChainMoveSpeed: 10
