@@ -13,7 +13,6 @@ public class PrimarySkill : BaseSkill
     void Start()
     {
         CooldownTime = 0.2f;
-        Debug.Log(CooldownTime);
 
         weapons = new Weapon[4];
 

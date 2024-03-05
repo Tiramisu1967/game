@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -41,6 +41,7 @@ public class RankingManager : MonoBehaviour
         if (GameInstance.instance != null)
         {
             Debug.Log("!");
+            GameInstance.instance.CurrentPlayerAddOnCount = 0;
             GameInstance.instance.CurrentPlayerFuel = 100;
             GameInstance.instance.CurrentPlayerHP = 3;
             GameInstance.instance.CurrentPlayerWeaponLevel = 0;
@@ -48,34 +49,34 @@ public class RankingManager : MonoBehaviour
             GameInstance.instance.GameStartTime = 0;
             GameInstance.instance.Score = 0;
         }
-        
+
     }
 
     public void MainMenuRanking()
     {
         RankingCanvas.gameObject.SetActive(true);
-        for(int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
             int currentScore = PlayerPrefs.GetInt(i + "BestScore");
             string currentName = PlayerPrefs.GetString(i + "BestName");
-            if(currentName == "")
+            if (currentName == "")
                 currentName = "None";
-            
+
             rankingEntries.Add(new RankingEntry(currentScore, currentName));
 
         }
 
         SortRanking();
 
-        for (int i = 0;i<Rankings.Length;i++)
+        for (int i = 0; i < Rankings.Length; i++)
         {
-            if(i < rankingEntries.Count)
+            if (i < rankingEntries.Count)
             {
                 Rankings[i].text = $"{i + 1} {rankingEntries[i].Name} : {rankingEntries[i].Score}";
             }
             else
             {
-                Rankings[i].text = $"{i +1}-"; 
+                Rankings[i].text = $"{i + 1}-";
             }
         }
     }
@@ -83,7 +84,7 @@ public class RankingManager : MonoBehaviour
     void SetCurrentScore()
     {
         rankingEntries.Clear();
-        for(int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
             int currentScore = PlayerPrefs.GetInt(i + "BestScore");
             string currentName = PlayerPrefs.GetString(i + "BestName");
@@ -112,17 +113,17 @@ public class RankingManager : MonoBehaviour
     {
         rankingEntries = rankingEntries.OrderByDescending(entry => entry.Score).ToList();
 
-        if(rankingEntries.Count > 5)
+        if (rankingEntries.Count > 5)
         {
             rankingEntries.RemoveAt(rankingEntries.Count - 1);
         }
     }
 
-     void UpdateRankingUI()
+    void UpdateRankingUI()
     {
-       CurrentPlayerScore.text = $"{CurrentPlayerInitial} { GameInstance.instance.Score}"; 
+        CurrentPlayerScore.text = $"{CurrentPlayerInitial} {GameInstance.instance.Score}";
 
-        for(int i = 0; i < Rankings.Length; i++)
+        for (int i = 0; i < Rankings.Length; i++)
         {
             if (i < rankingEntries.Count)
             {
@@ -134,7 +135,7 @@ public class RankingManager : MonoBehaviour
             }
         }
 
-        for(int i = 0; i < rankingEntries.Count; i++)
+        for (int i = 0; i < rankingEntries.Count; i++)
         {
             PlayerPrefs.SetInt(i + "BestScore", rankingEntries[i].Score);
             PlayerPrefs.SetString(i + "BestName", rankingEntries[i].Name);
@@ -146,7 +147,7 @@ public class RankingEntry
 {
     public int Score { get; set; }
     public string Name { get; set; }
-    
+
     public RankingEntry(int score, string name)
     {
         Score = score;

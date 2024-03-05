@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2078619081409314262
+--- !u!1001 &5265942438163334040
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1408920242171466625, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
       propertyPath: m_Name
-      value: EnemyC
+      value: EnemyD
       objectReference: {fileID: 0}
     - target: {fileID: 8460195838679558202, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,32 +58,33 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1408920242171466625, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -6953613474524812891}
+      addedObject: {fileID: 5350461810609333530}
   m_SourcePrefab: {fileID: 100100000, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
---- !u!1 &1105000890013380183 stripped
+--- !u!1 &6528284050872700953 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1408920242171466625, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
-  m_PrefabInstance: {fileID: 2078619081409314262}
+  m_PrefabInstance: {fileID: 5265942438163334040}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-6953613474524812891
+--- !u!114 &5350461810609333530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105000890013380183}
+  m_GameObject: {fileID: 6528284050872700953}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45eeddfe30c3e65419fe3100e911c502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 2
+  Health: 3
+  MaxHealth: 3
   AttackDamage: 1
   bIsFreeze: 0
   bIsDestroy: 0
   bMustSpawnItem: 0
-  MoveSpeed: 14
+  MoveSpeed: 20
   freezetime: 0
   ExplodeFX: {fileID: 5017900480036976570, guid: f6c47d0405b83bf48bdab8a8e52c6426, type: 3}
-  Projectile: {fileID: 4039346356428436469, guid: ef1953c4d759f3143af8866eec515183, type: 3}
-  ProjectileMoveSpeed: 2
+  Projectile: {fileID: 7622193172777978655, guid: 685903c75cd076b438f4dffba0d989ad, type: 3}
+  ProjectileMoveSpeed: 5

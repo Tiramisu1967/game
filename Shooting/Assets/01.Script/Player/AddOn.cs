@@ -63,7 +63,6 @@ public class AddOn : MonoBehaviour
                 }
             }
         }
-        Debug.Log(TagetPos);
         shoot(TagetPos);
         Posdistance = float.MaxValue;
         //ÃÑ¾Ë ¸¸µé±â

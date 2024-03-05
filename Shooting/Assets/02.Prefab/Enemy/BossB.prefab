@@ -69,6 +69,22 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8671352638249035045, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3620287
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671352638249035045, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
+      propertyPath: m_Size.y
+      value: 1.159797
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671352638249035045, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.025107563
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671352638249035045, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.015153766
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671352638249035045, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.3333334
       objectReference: {fileID: 0}
@@ -104,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a55bb4abd0d5e4bb5b9cec7daea0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
-  MaxHealth: 3
+  Health: 380
+  MaxHealth: 380
   AttackDamage: 1
   bIsFreeze: 1
   bIsDestroy: 1
@@ -125,11 +141,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0629f1eaed36740be06b4718df1424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 500
+  MaxHealth: 500
+  AttackDamage: 1
+  bIsFreeze: 1
+  bIsDestroy: 1
+  bMustSpawnItem: 1
+  MoveSpeed: 5
+  freezetime: 0
+  ExplodeFX: {fileID: 5017900480036976570, guid: f6c47d0405b83bf48bdab8a8e52c6426, type: 3}
   Projectile: {fileID: 4039346356428436469, guid: ef1953c4d759f3143af8866eec515183, type: 3}
-  ProjectileMoveSpeed: 5
+  ProjectileMoveSpeed: 10
   FireRate: 2
-  MoveSpeed: 2
   MoveDistance: 5
-  mini: {fileID: 8910228992685385373, guid: ce1529989ed012c42a8c4bfb59d43dce, type: 3}
-  chainseal: {fileID: 5814494814981822690, guid: 588c535b55641aa46b7c9d6b4adbe0ca, type: 3}
-  ChainMoveSpeed: 10
+  mini: {fileID: 6528284050872700953, guid: 3addb3cfb70bb674e8c523ca0f0baf9f, type: 3}

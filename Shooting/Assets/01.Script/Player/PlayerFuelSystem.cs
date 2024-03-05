@@ -25,8 +25,8 @@ public class PlayerFuelSystem : MonoBehaviour
         Fuel -= FuelDecreaseSpeed *Time.deltaTime;
         if (Fuel <= 0)
         {
-            Destroy(this.gameObject);
             GameManager.Instance.Player.DeadProcess();
+            
         }
         GameInstance.instance.CurrentPlayerFuel = Fuel;
     }

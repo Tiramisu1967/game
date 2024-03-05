@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
         if (bIsFreeze)
         {
             MoveSpeed = 0;
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.2f);
             if (freezetime <= 0)
             {
                 freezetime -= Time.deltaTime;
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour
             else
             {
                 freezetime = 3;
+                GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
                 bIsFreeze = false;
             }
             MoveSpeed = tmpSpeed;

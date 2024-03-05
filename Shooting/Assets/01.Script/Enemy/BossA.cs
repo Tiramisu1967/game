@@ -2,14 +2,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class BossA : MonoBehaviour
+public class BossA : Enemy
 {
     public GameObject Projectile;
     public float ProjectileMoveSpeed = 5.0f;
     public float FireRate = 2.0f;
-    public float MoveSpeed = 2.0f;
-    public float MoveDistance = 5.0f;
-    public Slider HpSlider;
+    public float MoveDistance = 10.0f;
+    
 
     private int _currentPatternIndex = 0;
     private bool _movingRight = true;
@@ -26,7 +25,7 @@ public class BossA : MonoBehaviour
 
     private IEnumerator MoveDownAndStartPattern()
     {
-        while (transform.position.y > _originPosition.y - 3f)
+        while (transform.position.y > _originPosition.y - 5f)
         {
             transform.Translate(Vector3.down * MoveSpeed * Time.deltaTime);
             yield return null;
@@ -38,6 +37,7 @@ public class BossA : MonoBehaviour
     private void Update()
     {
         
+        GameManager.Instance.Player.GetComponent<PlayerUI>().UpdateBoss(Health / MaxHealth);
         if (_bCanMove)
             MoveSideways();
     }
@@ -45,9 +45,8 @@ public class BossA : MonoBehaviour
     private void NextPattern()
     {
       
-        _currentPatternIndex = Random.Range(4, 4);
+        _currentPatternIndex = Random.Range(0, 3);
         Debug.Log(_currentPatternIndex);
-    
         switch (_currentPatternIndex)
         {
             case 0:
@@ -61,9 +60,7 @@ public class BossA : MonoBehaviour
                 break;
             case 3:
                 Pattern4();
-                break;
-            case 4:
-                Pattern5();
+                Debug.Log(_currentPatternIndex + "aaaaaa");
                 break;
         }
     }
@@ -158,25 +155,16 @@ public class BossA : MonoBehaviour
         NextPattern();
     }
 
-    public virtual void Pattern5()
-    {
-        NextPattern();
-    }
-
     private void OnDestroy()
     {
       
-        if (this.gameObject.name == "BossA" || this.gameObject.name == "BossB")
-        {
-            GameManager.Instance.Player.sealtime();
-            GameManager.Instance.StageClear();
-        }
-            
+        
+       
+        GameManager.Instance.StageClear();
+        GameManager.Instance.Player.sealtime();
+
+
     }
-    public void UpdateHealth()
-    {
-        Enemy enemy = this.GetComponent<Enemy>();
-        HpSlider.value = enemy.Health / enemy.MaxHealth;
-    }
+    
 
 }

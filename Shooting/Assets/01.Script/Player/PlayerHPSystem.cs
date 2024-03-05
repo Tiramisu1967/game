@@ -22,9 +22,9 @@ public class PlayerHPSystem : MonoBehaviour
         int Flick = 0;
         while (Flick < 5)
         {
-            GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+            GetComponent<SpriteRenderer>().color = new Color(1,1,1,0.2f);
             yield return new WaitForSeconds(0.1f);
-            GetComponent<SpriteRenderer>().color = new Color(0,0,0,0);
+            GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
             yield return new WaitForSeconds(0.1f);
             Flick++;
         }
@@ -38,6 +38,7 @@ public class PlayerHPSystem : MonoBehaviour
             && !GameManager.Instance.bStageCleared)
         {
             SoundManager.instance.PlaySFX("Hit");
+            StartCoroutine(HitFlick());
             Health -= 1;
             GameInstance.instance.CurrentPlayerHP = Health;
 

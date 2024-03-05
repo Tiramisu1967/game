@@ -11,7 +11,7 @@ public class BombSkill : BaseSkill
         foreach (GameObject obj in enemies)
         {
             if (obj.GetComponent<BossA>() || obj.GetComponent<BossB>())
-                return;
+            { Debug.Log("qqq"); return;  }
             Enemy enemy = obj?.GetComponent<Enemy>();
             if (enemy?.bIsDestroy == false) enemy?.Dead();
         }

@@ -28,12 +28,10 @@ public class EnemySpawner : BaseManager
         {
             case 1:
                 StartCoroutine(SpawnStage1Enemy());
-                Debug.Log("!!!1");
                 break;
 
             case 2:
                 StartCoroutine(SpawnStage2Enemy());
-                Debug.Log("!!!2");
                 break;
         }
             

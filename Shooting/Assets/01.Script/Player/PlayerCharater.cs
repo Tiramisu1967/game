@@ -149,18 +149,22 @@ public class PlayerCharater : MonoBehaviour
         }
     }
 
-    private void ActivateSkill(EnumTypes.PlayerSkill skillType)
-    {
-
-        if (Skills.ContainsKey(skillType))
-        {
-            if (Skills[skillType].IsAvailable())
-            {
-                Skills[skillType].Activate();
-
-            }
-        }
+    private void ActivateSkill(EnumTypes.PlayerSkill skillType) 
+    { 
+        if (Skills.ContainsKey(skillType)) 
+        { 
+            if (Skills[skillType].IsAvailable()) 
+            { 
+                Skills[skillType].Activate(); 
+            } 
+            else
+            { 
+                if (skillType != EnumTypes.PlayerSkill.Primary) 
+                    GetComponent<PlayerUI>().NoticeSkillCooldown(skillType); 
+            } 
+        } 
     }
+
 
     public void SetInvincibility(bool invin)
     {
@@ -196,8 +200,11 @@ public class PlayerCharater : MonoBehaviour
         }
     }
 
+    
     public void sealtime()
     {
+        PlayerUI ui = GetComponent<PlayerUI>();
+        ui.chainrelease();
         Chainbomb = false;
         Chainfreeze = false;
         Chainprotact = false;

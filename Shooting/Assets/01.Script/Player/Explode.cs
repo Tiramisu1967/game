@@ -11,7 +11,6 @@ public class Explode : MonoBehaviour
     void Start()
     {
         Destroy(this.gameObject, 1f);
-        Debug.Log(111);
     }
     private void Update()
     {

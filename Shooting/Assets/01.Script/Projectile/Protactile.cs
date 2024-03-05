@@ -9,9 +9,10 @@ public class Protactile : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy")
             && !GameManager.Instance.Player.Invincibility
             && !GameManager.Instance.bStageCleared
-            && !collision.GetComponent<BossA>()
+            && !collision.GetComponent<BossA>() 
             && !collision.GetComponent<BossB>())
         {
+            Debug.Log("sfefscvdsfgvaerthgth");
             Destroy(collision.gameObject);
         }
     }

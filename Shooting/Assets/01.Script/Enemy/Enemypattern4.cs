@@ -17,8 +17,12 @@ public class Enemypattern4 : Enemy
     // Update is called once per frame
     void Update()
     {
-        Move();
-        StartCoroutine(ShootProjectile(this.transform.position));
+        if (!bIsFreeze)
+        {
+            Move();
+            StartCoroutine(ShootProjectile());
+        }
+        
     }
 
     public void Move()
@@ -26,17 +30,18 @@ public class Enemypattern4 : Enemy
         transform.position -= new Vector3(0f, MoveSpeed * Time.deltaTime, 0f);
     }
 
-    IEnumerator ShootProjectile(Vector3 position)
+    IEnumerator ShootProjectile()
     {
-        yield return new WaitForSeconds(0.5f);
-        GameObject instance = Instantiate(Projectile, position, Quaternion.identity);
-        Projectile projectile = instance.GetComponent<Projectile>();
+        
+        GameObject instance = Instantiate(Projectile, this.transform.position, Quaternion.identity);
+        
+        Chain chain = instance.GetComponent<Chain>();
         SoundManager.instance.PlaySFX("Shoot");
-        if (projectile != null)
+        if (chain != null)
         {
-            projectile.MoveSpeed = ProjectileMoveSpeed;
-            projectile._lifeTime = 0.5f;
+            chain.MoveSpeed = ProjectileMoveSpeed;
+            chain._lifeTime = 0.5f;
         }
-       
+        yield return new WaitForSeconds(10f);
     }
 }

@@ -57,6 +57,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2192450021786810173, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
     - target: {fileID: 8671352638249035045, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
+      propertyPath: m_Size.x
+      value: 2.832542
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671352638249035045, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8612423
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671352638249035045, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0068068504
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671352638249035045, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.050933838
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671352638249035045, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2.75
       objectReference: {fileID: 0}
@@ -69,18 +85,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1408920242171466625, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 6568540699729598556}
-    - targetCorrespondingSourceObject: {fileID: 1408920242171466625, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7727972379275950287}
+      addedObject: {fileID: 1626195096379614573}
   m_SourcePrefab: {fileID: 100100000, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
 --- !u!1 &2318495324005679395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1408920242171466625, guid: 0d2956c9282bedc41b2b65991b4c8111, type: 3}
   m_PrefabInstance: {fileID: 3720411208411484834}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6568540699729598556
+--- !u!114 &1626195096379614573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,29 +105,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 229df1c334d985d438ffafe3264d39ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 4039346356428436469, guid: ef1953c4d759f3143af8866eec515183, type: 3}
-  vim: {fileID: 0}
-  ProjectileMoveSpeed: 5
-  FireRate: 2
-  MoveSpeed: 2
-  MoveDistance: 5
---- !u!114 &7727972379275950287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2318495324005679395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04a55bb4abd0d5e4bb5b9cec7daea0b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 10
+  Health: 300
+  MaxHealth: 300
   AttackDamage: 1
-  bIsFreeze: 0
-  bIsDestroy: 0
-  bMustSpawnItem: 0
-  MoveSpeed: 0
+  bIsFreeze: 1
+  bIsDestroy: 1
+  bMustSpawnItem: 1
+  MoveSpeed: 5
   freezetime: 0
   ExplodeFX: {fileID: 5017900480036976570, guid: f6c47d0405b83bf48bdab8a8e52c6426, type: 3}
+  Projectile: {fileID: 4039346356428436469, guid: ef1953c4d759f3143af8866eec515183, type: 3}
+  ProjectileMoveSpeed: 5
+  FireRate: 2
+  MoveDistance: 10

@@ -26,7 +26,18 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         transform.Translate(_direction * MoveSpeed * Time.deltaTime);
-    }
+        
+            if (IsOutOfScreen())
+            {
+                Destroy(gameObject);
+            }
+     }
+
+        bool IsOutOfScreen()
+        {
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+            return (screenPos.x < 0  || screenPos.x > Screen.width || screenPos.y < 0 || screenPos.y > Screen.height);
+        }
 
     public void SetDirection(Vector3 direction)
     {
@@ -36,6 +47,12 @@ public class Projectile : MonoBehaviour
     private void OnDestroy()
     {
         SoundManager.instance.PlaySFX("Explosion");
+    }
+
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 
 }
